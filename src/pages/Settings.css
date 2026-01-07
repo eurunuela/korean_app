@@ -1,0 +1,316 @@
+.settings {
+  max-width: 100%;
+}
+
+.settings-header {
+  margin-bottom: var(--space-lg);
+}
+
+.settings-back {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.settings-header h1 {
+  font-size: 1.75rem;
+  color: var(--color-text);
+}
+
+/* Sections */
+.settings-section {
+  background: var(--color-surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.settings-section h2 {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Fields */
+.settings-field {
+  margin-bottom: var(--space-lg);
+}
+
+.settings-field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.settings-field input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+}
+
+.settings-field input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.settings-help {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.settings-save {
+  width: 100%;
+  padding: var(--space-sm);
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background var(--transition-fast);
+}
+
+.settings-save:hover {
+  background: var(--color-primary-light);
+}
+
+/* Statistics */
+.settings-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.settings-stat {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+}
+
+.settings-stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.settings-stat-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Actions */
+.settings-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.settings-action {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.settings-action:hover {
+  background: var(--color-border);
+}
+
+.settings-action--danger {
+  border: 1px solid var(--color-error);
+}
+
+.settings-action--danger:hover {
+  background: #ffebee;
+}
+
+.settings-action-icon {
+  font-size: 1.5rem;
+}
+
+.settings-action-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.settings-action-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+/* About */
+.settings-about p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.settings-about strong {
+  color: var(--color-text);
+}
+
+.settings-version {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-md);
+}
+
+/* Account */
+.settings-account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-account-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-account-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.settings-account-email {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.settings-signout {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.settings-signout:hover {
+  background: var(--color-error);
+  border-color: var(--color-error);
+  color: white;
+}
+
+/* Sync info */
+.settings-sync-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: #e8f5e9;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-success);
+}
+
+/* Toggle switch */
+.settings-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-toggle {
+  width: 50px;
+  height: 28px;
+  background: var(--color-border);
+  border-radius: 14px;
+  position: relative;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.settings-toggle--on {
+  background: var(--color-success);
+}
+
+.settings-toggle-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  transition: transform var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.settings-toggle--on .settings-toggle-slider {
+  transform: translateX(22px);
+}
+
+/* Time input styling */
+.settings-field input[type="time"] {
+  width: auto;
+  min-width: 140px;
+}
+
+/* Language Selection */
+.settings-language-options {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.settings-language-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-background);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-width: 120px;
+}
+
+.settings-language-btn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-surface);
+}
+
+.settings-language-btn--active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: white;
+}
+
+.settings-language-flag {
+  font-size: 2rem;
+}
+
+.settings-language-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.settings-language-native {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.settings-language-btn--active .settings-language-native {
+  color: rgba(255, 255, 255, 0.9);
+}

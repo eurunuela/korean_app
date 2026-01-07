@@ -1,0 +1,152 @@
+.flashcard-deck {
+  padding: var(--space-md);
+}
+
+.flashcard-deck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.flashcard-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.flashcard-progress-bar {
+  width: 100px;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.flashcard-progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  transition: width var(--transition-normal);
+}
+
+.flashcard-deck-stats {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.deck-stat {
+  font-size: 0.8rem;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+}
+
+.deck-stat--due {
+  background: var(--color-accent);
+  color: white;
+}
+
+.deck-stat--new {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.flashcard-session-progress {
+  text-align: center;
+  margin-top: var(--space-xl);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+/* Empty state */
+.flashcard-empty,
+.flashcard-complete {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.flashcard-empty-icon,
+.flashcard-complete-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+}
+
+.flashcard-empty h3,
+.flashcard-complete h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.flashcard-empty p,
+.flashcard-complete p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.flashcard-stats-summary {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+/* Complete state */
+.flashcard-session-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+}
+
+.session-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.session-stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.flashcard-feedback {
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.flashcard-refresh {
+  padding: var(--space-sm) var(--space-xl);
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: background var(--transition-fast);
+}
+
+.flashcard-refresh:hover {
+  background: var(--color-primary-light);
+}

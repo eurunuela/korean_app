@@ -1,0 +1,226 @@
+.output-practice {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 2px solid var(--color-secondary);
+}
+
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.output-header h3 {
+  font-size: 1.1rem;
+  color: var(--color-secondary);
+}
+
+.output-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.output-progress-bar {
+  width: 60px;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.output-progress-fill {
+  height: 100%;
+  background: var(--color-secondary);
+  transition: width var(--transition-normal);
+}
+
+.output-exercise {
+  margin-bottom: var(--space-lg);
+}
+
+.output-type {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.output-prompt {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.output-hint-container {
+  margin-bottom: var(--space-md);
+}
+
+.output-hint-toggle {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  text-decoration: underline;
+  margin-bottom: var(--space-sm);
+}
+
+.output-hint {
+  background: var(--color-background);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  border-left: 3px solid var(--color-secondary);
+}
+
+.output-answer {
+  background: #e8f5e9;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-sm);
+}
+
+.output-answer strong {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-success);
+  margin-bottom: var(--space-xs);
+}
+
+.output-textarea {
+  width: 100%;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-korean);
+  font-size: 1rem;
+  resize: vertical;
+  margin-bottom: var(--space-md);
+}
+
+.output-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.output-recording {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--color-background);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-md);
+}
+
+.output-record-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  background: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-xl);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.output-record-btn:hover {
+  background: var(--color-accent-light);
+  transform: scale(1.02);
+}
+
+.output-record-btn--recording {
+  background: var(--color-error);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.output-playback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.output-playback audio {
+  width: 100%;
+  max-width: 300px;
+}
+
+.output-rerecord {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+}
+
+.output-checklist {
+  margin-bottom: var(--space-md);
+}
+
+.output-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.output-check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-success);
+}
+
+.output-actions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.output-skip,
+.output-complete {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.output-skip {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.output-skip:hover {
+  background: var(--color-border);
+}
+
+.output-complete {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.output-complete:hover {
+  background: var(--color-secondary-light);
+}
+
+.output-done {
+  text-align: center;
+  padding: var(--space-md);
+  background: #e8f5e9;
+  border-radius: var(--radius-md);
+  color: var(--color-success);
+  font-weight: 500;
+}

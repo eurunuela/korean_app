@@ -1,0 +1,334 @@
+.schedule {
+  max-width: 100%;
+}
+
+.schedule-header {
+  margin-bottom: var(--space-lg);
+}
+
+.schedule-back {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.schedule-header h1 {
+  font-size: 1.75rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.schedule-header p {
+  color: var(--color-text-secondary);
+}
+
+/* Current Position */
+.schedule-current {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.schedule-current-label {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.schedule-current-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.schedule-advance {
+  background: white;
+  color: var(--color-primary);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Progress Bar */
+.schedule-progress {
+  margin-bottom: var(--space-xl);
+}
+
+.schedule-progress-bar {
+  height: 8px;
+  background: var(--color-border);
+  border-radius: 4px;
+  position: relative;
+}
+
+.schedule-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 4px;
+  transition: width var(--transition-normal);
+}
+
+.schedule-progress-marker {
+  position: absolute;
+  top: 100%;
+  transform: translateX(-50%);
+  padding-top: var(--space-xs);
+}
+
+.schedule-progress-marker span {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}
+
+/* Month */
+.schedule-month {
+  margin-bottom: var(--space-xl);
+}
+
+.schedule-month--current {
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--space-md);
+}
+
+.schedule-month-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-md);
+}
+
+.schedule-month-header h2 {
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.schedule-month-weeks {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+/* Weeks */
+.schedule-weeks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.schedule-week {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.schedule-week--current {
+  border: 2px solid var(--color-primary);
+}
+
+.schedule-week--past {
+  opacity: 0.7;
+}
+
+.schedule-week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  width: 100%;
+  text-align: left;
+}
+
+.schedule-week-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.schedule-week-number {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.schedule-week--current .schedule-week-number {
+  color: var(--color-primary);
+}
+
+.schedule-week-theme {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.schedule-week-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.schedule-week-vocab {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.schedule-week-expand {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+}
+
+/* Week Content */
+.schedule-week-content {
+  padding: 0 var(--space-md) var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.schedule-goals {
+  padding: var(--space-md) 0;
+}
+
+.schedule-goals h4,
+.schedule-days h4 {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.schedule-goals ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.schedule-goals li {
+  font-size: 0.85rem;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+}
+
+/* Days */
+.schedule-days {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.schedule-day {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.schedule-day:last-child {
+  border-bottom: none;
+}
+
+.schedule-day--today {
+  background: #e3f2fd;
+  margin: 0 calc(-1 * var(--space-md));
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+.schedule-day--past {
+  opacity: 0.6;
+}
+
+.schedule-day-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.schedule-day-number {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.schedule-day-badge {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-sm);
+}
+
+.schedule-day-check {
+  color: var(--color-success);
+}
+
+.schedule-day-select {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.schedule-day:hover .schedule-day-select {
+  opacity: 1;
+}
+
+.schedule-day:hover {
+  background: var(--color-background);
+  margin: 0 calc(-1 * var(--space-md));
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+.schedule-day-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.schedule-block {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.85rem;
+  padding: var(--space-xs) 0;
+}
+
+.schedule-block-type {
+  width: 20px;
+  text-align: center;
+}
+
+.schedule-block-content {
+  flex: 1;
+  color: var(--color-text-secondary);
+}
+
+.schedule-block-time {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  background: var(--color-background);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 480px) {
+  .schedule-current {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .schedule-advance {
+    width: 100%;
+  }
+}
