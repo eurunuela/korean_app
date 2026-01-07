@@ -1,0 +1,78 @@
+{
+  "app": {
+    "name": "Korean Learning App",
+    "version": "1.0.0",
+    "description": "A comprehensive Korean language learning application with SRS flashcards and structured curriculum"
+  },
+  "languages": [
+    {
+      "id": "korean",
+      "name": "Korean",
+      "vocabulary_count": 223,
+      "curriculum_weeks": 24
+    },
+    {
+      "id": "basque",
+      "name": "Basque",
+      "vocabulary_count": 240,
+      "curriculum_weeks": 24
+    }
+  ],
+  "features": {
+    "srs_flashcards": {
+      "enabled": true,
+      "description": "Spaced Repetition System for vocabulary learning",
+      "components": ["Flashcard", "FlashcardDeck"]
+    },
+    "curriculum": {
+      "enabled": true,
+      "description": "Structured 24-week learning curriculum",
+      "total_lessons": 94,
+      "modules": [
+        "hangul",
+        "vocab",
+        "grammar",
+        "conversation",
+        "listening",
+        "reading",
+        "speaking",
+        "situations",
+        "culture",
+        "review",
+        "final"
+      ]
+    },
+    "daily_schedule": {
+      "enabled": true,
+      "description": "Daily learning sessions with review, lesson, and output blocks",
+      "session_types": ["review", "lesson", "output"]
+    },
+    "quizzes": {
+      "enabled": true,
+      "description": "Interactive quizzes for knowledge assessment"
+    },
+    "dialogues": {
+      "enabled": true,
+      "description": "Conversational practice with dialogues"
+    },
+    "progress_tracking": {
+      "enabled": true,
+      "description": "Track learning progress and completed lessons"
+    },
+    "user_authentication": {
+      "enabled": true,
+      "description": "User login and authentication via Supabase"
+    }
+  },
+  "tech_stack": {
+    "frontend": "React + Vite",
+    "styling": "CSS",
+    "backend": "Supabase",
+    "hosting": "Vercel",
+    "version_control": "GitHub"
+  },
+  "repository": {
+    "url": "https://github.com/eurunuela/korean_app",
+    "created": "2026-01-07"
+  }
+}

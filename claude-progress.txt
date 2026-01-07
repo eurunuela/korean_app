@@ -41,3 +41,15 @@
 ### Verification
 - Total lessons: 94
 - Lessons without moduleId: 0 (all fixed)
+
+## 2026-01-07: GitHub Repository Setup
+
+### Actions
+- Initialized git repository
+- Updated .gitignore (added node_modules, dist)
+- Created initial commit with all project files
+- Created public GitHub repository
+
+### Repository
+- URL: https://github.com/eurunuela/korean_app
+- Connected to Vercel for automatic deployments
