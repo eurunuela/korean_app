@@ -17,8 +17,10 @@ function Home() {
   const getDayData = selectedLanguage === 'basque' ? getDaySessionBasque : getDaySession
   const getVocab = selectedLanguage === 'basque' ? getVocabForWeekBasque : getVocabForWeek
 
-  // Get first module for quick action link
-  const firstModule = curriculum?.modules?.[0]
+  // Get modules for quick action links (filter out 'daily' - it's accessed through schedule)
+  const browsableModules = curriculum?.modules?.filter(m => m.id !== 'daily') || []
+  const firstModule = browsableModules[0]
+  const secondModule = browsableModules[1]
 
   const currentWeekData = getWeekData(progress.currentWeek)
   const todaySession = getDayData(progress.currentWeek, progress.currentDay)
@@ -129,10 +131,10 @@ function Home() {
               <span className="action-label">{firstModule.name}</span>
             </Link>
           )}
-          {curriculum?.modules?.[2] && (
-            <Link to={`/lesson/${curriculum.modules[2].id}`} className="action-btn">
-              <span className="action-icon">{curriculum.modules[2].icon}</span>
-              <span className="action-label">{curriculum.modules[2].name}</span>
+          {secondModule && (
+            <Link to={`/lesson/${secondModule.id}`} className="action-btn">
+              <span className="action-icon">{secondModule.icon}</span>
+              <span className="action-label">{secondModule.name}</span>
             </Link>
           )}
         </div>

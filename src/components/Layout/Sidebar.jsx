@@ -8,7 +8,8 @@ function Sidebar({ isOpen, onClose }) {
   const { currentLanguage, curriculum } = useLanguage()
 
   // Get modules from current language's curriculum
-  const modules = curriculum?.modules || []
+  // Filter out 'daily' module - it's accessed through the daily schedule, not directly
+  const modules = (curriculum?.modules || []).filter(m => m.id !== 'daily')
 
   return (
     <aside className={`sidebar ${isOpen ? 'sidebar--open' : ''}`}>
