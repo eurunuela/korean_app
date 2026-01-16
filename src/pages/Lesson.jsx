@@ -14,6 +14,9 @@ function Lesson() {
   const { curriculum } = useLanguage()
   const [selectedLesson, setSelectedLesson] = useState(null)
 
+  // Check if we're in direct lesson mode (from daily schedule) or module browse mode
+  const isDirectLessonMode = Boolean(lessonId)
+
   // Get module from current language's curriculum
   const module = curriculum?.modules?.find(m => m.id === moduleId)
 
@@ -26,11 +29,12 @@ function Lesson() {
     )
   }
 
-  // If no lesson selected, show module overview
-  const currentLesson = selectedLesson
-    ? module.lessons.find(l => l.id === selectedLesson)
-    : lessonId
+  // In direct lesson mode, show only the specific lesson
+  // In module browse mode, allow navigation between lessons
+  const currentLesson = isDirectLessonMode
     ? module.lessons.find(l => l.id === lessonId)
+    : selectedLesson
+    ? module.lessons.find(l => l.id === selectedLesson)
     : null
 
   const handleLessonComplete = () => {
@@ -53,24 +57,26 @@ function Lesson() {
         </div>
       </header>
 
-      {/* Lesson Navigation */}
-      <nav className="lesson-nav">
-        <div className="lesson-nav-list">
-          {module.lessons.map((lesson, index) => (
-            <button
-              key={lesson.id}
-              className={`lesson-nav-item ${
-                (currentLesson?.id === lesson.id) ? 'lesson-nav-item--active' : ''
-              } ${isLessonComplete(lesson.id) ? 'lesson-nav-item--complete' : ''}`}
-              onClick={() => setSelectedLesson(lesson.id)}
-            >
-              <span className="lesson-nav-number">{index + 1}</span>
-              <span className="lesson-nav-title">{lesson.title}</span>
-              {isLessonComplete(lesson.id) && <span className="lesson-nav-check">✓</span>}
-            </button>
-          ))}
-        </div>
-      </nav>
+      {/* Lesson Navigation - only show in module browse mode */}
+      {!isDirectLessonMode && (
+        <nav className="lesson-nav">
+          <div className="lesson-nav-list">
+            {module.lessons.map((lesson, index) => (
+              <button
+                key={lesson.id}
+                className={`lesson-nav-item ${
+                  (currentLesson?.id === lesson.id) ? 'lesson-nav-item--active' : ''
+                } ${isLessonComplete(lesson.id) ? 'lesson-nav-item--complete' : ''}`}
+                onClick={() => setSelectedLesson(lesson.id)}
+              >
+                <span className="lesson-nav-number">{index + 1}</span>
+                <span className="lesson-nav-title">{lesson.title}</span>
+                {isLessonComplete(lesson.id) && <span className="lesson-nav-check">✓</span>}
+              </button>
+            ))}
+          </div>
+        </nav>
+      )}
 
       {/* Lesson Content */}
       {currentLesson ? (
@@ -189,6 +195,12 @@ function Lesson() {
               Mark Lesson Complete
             </button>
           )}
+        </div>
+      ) : isDirectLessonMode ? (
+        <div className="lesson-not-found">
+          <h2>Lesson not found</h2>
+          <p>The requested lesson could not be found in this module.</p>
+          <Link to="/">Return to Home</Link>
         </div>
       ) : (
         <div className="lesson-overview">

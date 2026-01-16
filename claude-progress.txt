@@ -53,3 +53,92 @@
 ### Repository
 - URL: https://github.com/eurunuela/korean_app
 - Connected to Vercel for automatic deployments
+
+## 2026-01-16: Fixed Daily Lesson Navigation
+
+### Issue Found
+- When clicking "Go to Lesson" on the home page, users were shown a multi-lesson navigation view
+- Multiple days could link to the same lesson, showing all lessons in the module
+- Each day should have its own direct lesson view without navigation clutter
+
+### Resolution
+- Updated Home.jsx to include lessonId in the lesson link URL (`/lesson/${moduleId}/${lessonId}`)
+- Modified Lesson.jsx to detect "direct lesson mode" when lessonId is in the URL
+- In direct lesson mode, the lesson navigation is hidden and users see only the specific lesson content
+- Module browse mode (without lessonId) still shows the full lesson navigation
+- Fixed App.jsx route parameters from `:weekId/:dayId` to `:moduleId/:lessonId`
+
+### Files Modified
+- src/pages/Home.jsx
+- src/pages/Lesson.jsx
+- src/App.jsx
+
+### Result
+- Each day's "Go to Lesson" button now links directly to the specific lesson
+- No more multi-lesson navigation view when accessing from daily schedule
+- Users can still browse all lessons in a module via the sidebar navigation
+
+## 2026-01-16: Created 144 Unique Daily Lessons
+
+### Issue Found
+- The curriculum had the same lessons repeating throughout the 24-week course
+- Each day should have its own unique lesson content, not shared lessons
+
+### Resolution
+- Created a new `curriculum-daily.js` file with 144 unique lessons
+- Added `dailyLessons` module to `curriculum-korean.js`
+- Each week (6 lessons) covers a specific theme:
+
+**Month 1: Foundation (Weeks 1-4)**
+- Week 1: Hangul Mastery (vowels, consonants, syllables)
+- Week 2: Basic Grammar (particles, sentence structure)
+- Week 3: Essential Vocabulary (numbers, time, family)
+- Week 4: Basic Conversations (greetings, introductions)
+
+**Month 2: Expanding Grammar (Weeks 5-8)**
+- Week 5: Particles Deep Dive (subject, object, topic)
+- Week 6: Verb Conjugation (tenses, negation)
+- Week 7: Adjectives & Descriptions
+- Week 8: Questions & Answers
+
+**Month 3: Practical Korean (Weeks 9-12)**
+- Week 9: Honorifics System
+- Week 10: Grammar Patterns (connectors, comparisons)
+- Week 11: Practical Situations (shopping, dining)
+- Week 12: Mid-Course Review
+
+**Month 4: Intermediate Skills (Weeks 13-16)**
+- Week 13: Comparisons & Superlatives
+- Week 14: Advanced Verb Forms
+- Week 15: Practical Situations II (transportation, health)
+- Week 16: Cultural Communication
+
+**Month 5: Advanced Patterns (Weeks 17-20)**
+- Week 17: Complex Grammar (passive, causative)
+- Week 18: Formal & Written Korean
+- Week 19: Media & Entertainment (K-drama, K-pop)
+- Week 20: Travel & Living
+
+**Month 6: Fluency & Culture (Weeks 21-24)**
+- Week 21: Advanced Communication (reported speech, nuance)
+- Week 22: Professional Korean (business, presentations)
+- Week 23: Cultural Fluency (proverbs, idioms, slang)
+- Week 24: Course Completion & Review
+
+### Files Created/Modified
+- src/data/curriculum-daily.js (created - 144 lessons, ~4100 lines)
+- src/data/curriculum-korean.js (modified - added dailyLessons to modules)
+
+### Lesson Structure
+Each lesson includes:
+- `id`: Unique identifier (e.g., `w1d1-basic-vowels`)
+- `title`: Lesson title
+- `intro`: Markdown content with tables and examples
+- `studyGuide`: Array of vocabulary items with korean, romanization, meaning, example
+- `quiz`: Array of quiz questions with options and explanations
+
+### Statistics
+- Total lessons: 144 unique lessons
+- Weeks covered: 24 (6 lessons per week)
+- Course duration: ~6 months of daily learning
+- Skill progression: TOPIK 1 → TOPIK 2-3 level

@@ -26,9 +26,10 @@
     },
     "curriculum": {
       "enabled": true,
-      "description": "Structured 24-week learning curriculum",
-      "total_lessons": 94,
+      "description": "Structured 24-week learning curriculum with unique daily lessons",
+      "total_lessons": 144,
       "modules": [
+        "daily",
         "hangul",
         "vocab",
         "grammar",
@@ -40,12 +41,47 @@
         "culture",
         "review",
         "final"
-      ]
+      ],
+      "daily_lessons": {
+        "enabled": true,
+        "total": 144,
+        "weeks": 24,
+        "lessons_per_week": 6,
+        "topics": [
+          "Hangul Mastery",
+          "Basic Grammar",
+          "Essential Vocabulary",
+          "Conversations",
+          "Particles",
+          "Verb Conjugation",
+          "Adjectives",
+          "Questions",
+          "Honorifics",
+          "Grammar Patterns",
+          "Practical Situations",
+          "Mid-Course Review",
+          "Comparisons",
+          "Advanced Verbs",
+          "Transportation & Health",
+          "Cultural Communication",
+          "Complex Grammar",
+          "Formal Korean",
+          "Media Korean",
+          "Travel & Living",
+          "Advanced Communication",
+          "Professional Korean",
+          "Cultural Fluency",
+          "Course Completion"
+        ],
+        "last_updated": "2026-01-16"
+      }
     },
     "daily_schedule": {
       "enabled": true,
       "description": "Daily learning sessions with review, lesson, and output blocks",
-      "session_types": ["review", "lesson", "output"]
+      "session_types": ["review", "lesson", "output"],
+      "direct_lesson_links": true,
+      "last_updated": "2026-01-16"
     },
     "quizzes": {
       "enabled": true,

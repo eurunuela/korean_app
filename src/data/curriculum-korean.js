@@ -1,11 +1,14 @@
 // Korean Fluency Course Curriculum
 // Based on Oboe.fyi structure with enhanced content
 
+import { dailyLessons } from './curriculum-daily'
+
 export const koreanCurriculum = {
   id: 'korean',
   name: 'Korean',
   nativeName: '한국어',
   modules: [
+  dailyLessons,
   {
     id: 'hangul',
     name: 'Hangul Basics',

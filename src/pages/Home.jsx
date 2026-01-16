@@ -96,9 +96,9 @@ function Home() {
                   <span className="session-block-time">{block.minutes} min</span>
                 </div>
                 <p className="session-block-content">{block.content}</p>
-                {block.moduleId && (
+                {block.moduleId && block.lessonId && (
                   <Link
-                    to={`/lesson/${block.moduleId}`}
+                    to={`/lesson/${block.moduleId}/${block.lessonId}`}
                     className="session-block-link"
                   >
                     Go to Lesson →
